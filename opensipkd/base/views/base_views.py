@@ -1,7 +1,7 @@
 import logging
-from cgi import FieldStorage
 import os
 from datetime import datetime
+from cgi import FieldStorage
 from email.utils import parseaddr
 from webob.multidict import MultiDict
 
@@ -10,7 +10,6 @@ from datatables import ColumnDT
 from deform import (widget, Form, ValidationFailure, FileData, )
 from deform.widget import SelectWidget
 from pyramid.httpexceptions import HTTPFound, HTTPNotFound
-from pyramid.request import Response
 from sqlalchemy import Table
 
 # from opensipkd.base.views.upload import tmpstore
@@ -22,13 +21,16 @@ from opensipkd.tools.buttons import (
     btn_pdf, btn_upload)
 # from opensipkd.tools.captcha import get_captcha
 from opensipkd.tools.report import csv_response, file_response
-from opensipkd.base import BASE_CLASS
+from pyramid.request import Response
 from .common import DataTables
 from ..models import DBSession, Partner, Base
 from ..widgets import widget_os
+# , get_params, get_urls
 from ..scripts.initializedb import append_csv
 from ..tools import obj2json
 from ...detable import DeTable
+from opensipkd.base import BASE_CLASS
+from pyramid.csrf import new_csrf_token, get_csrf_token
 
 log = logging.getLogger(__name__)
 

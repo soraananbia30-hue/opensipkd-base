@@ -13,7 +13,6 @@ class _Departemen(NamaModel):
     singkat = Column(String(32))
     level_id = Column(SmallInteger)
     __tablename__ = 'departemen'
-    
     @declared_attr
     def children(self):
         return relationship(

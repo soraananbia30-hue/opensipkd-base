@@ -61,8 +61,8 @@ class ApiViews(APIView):
         return query
 
     def list_filter(self, query, **kw):
-        id_ = self.req.params.get("id", 0)
-        kode = self.req.params.get("kode", 0)
+        id_ = kw.get("id", 0)
+        kode = kw.get("kode", 0)
         if id_:
             query = query.filter(self.table.id == int(id_))
         elif kode:

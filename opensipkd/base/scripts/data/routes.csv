@@ -9,7 +9,7 @@ base-password-request,/password/{code}/request,base,user_login,ViewPassword,chan
 base-profile,/profile,base,register,,view_profile,,view,,Profile,1,0,,0,form8.pt,
 base-register,/register,base,register,,view_register,,,,Register,1,0,,0,form8.pt,
 base-recreate-api-key,/recreate-api-key,base,register,ViewPassword,recreate-api-key,,,,Get Api Key,1,0,,0,recreate-api-key.pt,
-base-admin,#,base,,,,,admin,,Administrator,1,0,,1,,
+base-admin,#,base,,,,,view,,Administrator,1,0,,1,,
 base-user,/user,base,user,,view_list,,user-view,base-admin,User,1,0,,1,form.pt,
 base-user-act,/user/{act}/act,base,user,,,,user-view,base-user,User Action,1,0,,,json,
 base-user-add,/user/add,base,user,,,,user-edit,base-user,User Add,1,0,,,form6.pt,
